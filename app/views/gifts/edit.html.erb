@@ -1,0 +1,21 @@
+
+<h1>Edit Gift Idea</h1>
+<%= form_with model: @gift do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+  <div>
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+  <div>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+  <%= form.submit %>
+<% end %>

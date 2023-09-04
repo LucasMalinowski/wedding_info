@@ -1,0 +1,135 @@
+
+
+<style>
+    header {
+        background-color: rgba(164, 74, 21, 0.75);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        font-family: "Caveat", cursive
+    }
+
+    .card {
+        background-color: rgba(112, 37, 6, 0.75);
+        color: white;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .card-list {
+        padding: 12px 20px !important
+    }
+
+    .underline {
+        border-bottom: 2px solid rgba(164, 74, 21, 0.75);
+        margin-bottom: 20px;
+    }
+
+    .accordion {
+        margin-top: 20px;
+    }
+    h1 {
+        color: white
+    }
+
+    .image-pix {
+        border-radius: 5px;
+        max-width: 200px;
+    }
+
+    .pix-style {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-body {
+
+    }
+
+    body {
+        background-color: #D9D4C1;
+        margin: 0;
+        padding: 0;
+         font-family: Arial, sans-serif;
+         text-align: center;
+    }
+
+    #countdown {
+        font-size: 20px;
+    }
+</style>
+
+
+<header>
+  <h2 class="title">Wedding Nath e Lucas</h2>
+</header>
+
+<div class="container">
+  <div class="card countdown" id="countdown">
+    <a data-type="countdown" data-id="4142521" class="tickcounter" style="display: block; width: 100%; position: relative; padding-bottom: 25%" title="Countdown" href="//www.tickcounter.com/">Countdown</a>
+    <p>Para o nosso grande dia!</p>
+  </div>
+    <div class="card">
+
+      <h4>02.12.23 - 17:00 <i class="fa fa-calendar-check-o" aria-hidden="true"></i></h4>
+      <h5>Rancho Rio da Paz - Cascavel/PR <i class="fa fa-map-marker" aria-hidden="true"></i></h5>
+      <a href="https://goo.gl/maps/HLKR1jGKHuafR8os9">
+        <iframe width='100%' height='300' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57861.07926967471!2d-53.511601757728506!3d-24.989326780961772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d5d8d5bf10d9%3A0xa93423c5de6688bf!2sRancho%20Rio%20da%20Paz!5e0!3m2!1sen!2sbr!4v1684782523090!5m2!1sen!2sbr" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </a>
+    </div>
+
+    <div class="underline"></div>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card card-list">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed shadow-none text-decoration-none text-white button-list" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Lista de Presentes
+          </button>
+        </h2>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <p>Caso queira nos presentear com algum item para a casa, aqui estão algumas opções que sept  amos para te ajudar a escolher
+              aquilo que ainda estamos precisando para nosso novo lar!</p>
+
+            <%= link_to "Lista de Presentes - HAVAN", "https://lista.havan.com.br/Convidado/ItensListaPresente/684715", class: "text-decoration-none text-dark", target: "_blank" %>
+            <i class="fa fa-cart-plus text-dark" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-list">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed shadow-none text-decoration-none text-white button-list" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            PIX - Presente em dinheiro
+          </button>
+        </h2>
+        <div id="collapseTwo" class="collapse collapse1" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body pix-style">
+            <p>Caso queria nos presentear com dinheiro vivo, e ajudar a pagar os primeiros boletos, e a viagem da lua de mel, aqui está
+            nossa chave PIX e QR Code pra facilitar sua vida hehe...</p>
+            <%= image_tag Gift.pixes&.image, class: 'image-pix'%>
+            Chave PIX: lucasmalino@outlook.com
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+    (function(d, s, id) {
+        var js, pjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//www.tickcounter.com/static/js/loader.js";
+        pjs.parentNode.insertBefore(js, pjs);
+    }
+    (document, "script", "tickcounter-sdk"));
+</script>
+
+<script></script>

@@ -1,0 +1,29 @@
+<!-- generate the show html.erb using the gifts_controller#show as base -->
+<h1>
+  <%= @gift.name %>
+</h1>
+<p>
+  <strong>Price:</strong>
+  <%= @gift.price %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @gift.link %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @gift.image %>
+</p>
+
+<p>
+  <strong>PIX</strong>
+  <%= image_tag @pix_qrcode %>
+</p>
+
+<!-- add a link to the edit page -->
+<%= link_to 'Edit', edit_gift_path(@gift) %> |
+
+<!-- add a link to the index page -->
+<%= link_to 'Back', gifts_path %>
