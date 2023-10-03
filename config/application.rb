@@ -15,7 +15,7 @@ module GiftIdeas
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    #
+    config.public_file_server.enabled = true
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     require "active_storage/engine"
