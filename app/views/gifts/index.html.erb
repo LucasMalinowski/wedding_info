@@ -26,6 +26,8 @@
         background-color: rgba(232, 227, 227, 0.8);
         border-radius: 15px;
     }
+
+
     .line {
         border-right: 2px solid #38521f;
         margin: 40px 0 50px 0;
@@ -131,6 +133,11 @@
         padding: 0 0 5px 15px;
         display: none;
     }
+
+    .pix-text {
+        flex-direction: column;
+    }
+
     .card-2{
         width: 100%;
     }
@@ -221,6 +228,12 @@
         justify-content: center;
         display: flex;
         padding: 10px 0 10px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pix-img{
+        width: 60%;
     }
 
     button, input[type="submit"], input[type="reset"] {
@@ -256,22 +269,130 @@
         display: flex;
         justify-content: center;
     }
-</style>
-<div class="card card-class card-1">
-  <div class="card-body">
-    <span>Casamento <br> Lucas e Nathalia</span>
-  </div>
-</div>
-  <div class="all">
 
+    .card-5{
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        .card {
+            max-width: 998px;
+            width: 100%;
+            border-radius: 15px !important;
+        }
+        .card-temp{
+            width: 45% !important;
+        }
+        .card-5{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        .card-5 .image-container img{
+            border-radius: 0 15px 15px 0;
+        }
+        .card-5 .text-left{
+            padding-left: 50px !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        .card-5 .card-1-text{
+            font-size: 25px !important;
+        }
+        .card-5 .card-text{
+            margin-top: 0px !important;
+        }
+
+        .presents {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .presents .image-container img{
+            border-radius: 15px 0 0 15px;
+
+        }
+        .pix-text{
+            flex-direction: row !important;
+            align-items: center !important;
+        }
+        .pix {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        .pix-text span {
+            width: 250px;
+        }
+        .pix-img {
+            width: 76%;
+        }
+
+        .location-map {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .card-text-2 {
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: 25px;
+            width: 70%;
+        }
+        .confirmation-text {
+            font-size: 40px !important;
+        }
+
+        .card-3-text {
+            padding-left: 70px;
+            font-size: 25px;
+        }
+
+        .observation-button-text{
+            font-size: 25px;
+            text-align: start;
+        }
+        .small-text {
+            font-size: 20px;
+            padding-left: 30px;
+        }
+
+        .card-6{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        .card-6 .card-text{
+            padding-left: 40px;
+        }
+
+        .card-4-text{
+            font-size: 35px;
+        }
+
+        .card-6 .image-container img {
+            border-radius: 0 15px 15px 0;
+        }
+    }
+</style>
+
+  <div class="all">
+    <div class="card card-class card-1">
+      <div class="card-body">
+        <span>Casamento <br> Lucas e Nathalia</span>
+      </div>
+    </div>
     <div class="card card-class card-2 card-temp">
       <div class="card-body image-1">
         <a data-type="countdown" data-id="4470991" class="tickcounter" style="display:block; left:0; width:100%; height:0; position:relative; padding-bottom:20%; margin:0 auto;" title="Temporizador" href="//www.tickcounter.com/">Temporizador</a>
       </div>
     </div>
 
-    <div class="card">
-      <div class="image-container">
+    <div class="card card-5">
+      <div class="image-container image-container-1">
         <%= image_tag "card1.png" %>
       </div>
       <div>
@@ -310,17 +431,20 @@
                 <span>QR Code para PIX</span>
               </div>
               <div class="pix-text drop-text" id="pix-text">
-                Não queremos estipular um presente, mas se quiser contribuir para a nossa viagem de lua de mel, fique a vontade para ofertar o valor que se sentir mais confortável. Afinal, somos gratos por tudo o que recebemos não nos importando com valor ou quantidade.
+                <span>
+                  Não queremos estipular um presente, mas se quiser contribuir para a nossa viagem de lua de mel, fique a vontade para ofertar o valor que se sentir mais confortável. Afinal, somos gratos por tudo o que recebemos não nos importando com valor ou quantidade.
+                </span>
                 <div class="pix">
-                  <%= image_tag "pix.png" %>
+                  <%= image_tag "pix.png", class: "pix-img" %>
+                  <div class="pix-code">
+                    Chave PIX: +5545998028130
+                    <input type="hidden" value="+55459980281300" id="pix-value">
+                    <button onclick="copy()">
+                      <i class="fa fa-clone pl-1" aria-hidden="true" value="+5545998028130"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="pix-code">
-                  Chave PIX: +5545998028130
-                  <input type="hidden" value="+55459980281300" id="pix-value">
-                  <button onclick="copy()">
-                    <i class="fa fa-clone pl-1" aria-hidden="true" value="+5545998028130"></i>
-                  </button>
-                </div>
+
               </div>
             </div>
 
@@ -347,8 +471,10 @@
     <div class="card card-class card-2">
       <div class="card-body image-1">
         <p class="card-title-2 card-title-map">Onde será a cerimônia?</p>
-        <iframe width='100%' height='300' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57861.07926967471!2d-53.511601757728506!3d-24.989326780961772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d5d8d5bf10d9%3A0xa93423c5de6688bf!2sRancho%20Rio%20da%20Paz!5e0!3m2!1sen!2sbr!4v1684782523090!5m2!1sen!2sbr&zoom=12" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p class="card-text-2 mt-2">A cerimônia acontecerá no Rancho Rio da Paz às 17h- Localizado na Rua Rio da Paz - CEP 85803100, Cascavel-PR.</p>
+        <div class="location-map">
+          <iframe width='100%' height='300' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57861.07926967471!2d-53.511601757728506!3d-24.989326780961772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d5d8d5bf10d9%3A0xa93423c5de6688bf!2sRancho%20Rio%20da%20Paz!5e0!3m2!1sen!2sbr!4v1684782523090!5m2!1sen!2sbr&zoom=12" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p class="card-text-2 mt-2">A cerimônia acontecerá no Rancho Rio da Paz às 17h- Localizado na Rua Rio da Paz - CEP 85803100, Cascavel-PR.</p>
+        </div>
       </div>
     </div>
 
@@ -398,7 +524,7 @@
                     <h5 class="mb-2 observation-button-text">
                       Observações! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </h5>
-                    <h6 class="mb-0 small-text">Todos os nomes citados no convite...</h6>
+                    <h6 class="mb-0 small-text">Todos os nomes citados no convite impresso e/ou virtual, devem ...</h6>
                   </button>
                 </div>
 
@@ -413,7 +539,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card-6">
       <div class="image-container">
         <%= image_tag "card4.png" %>
       </div>
@@ -432,27 +558,37 @@
     document.getElementById("pix-caret").addEventListener("click", function(){
         var pixtext = document.getElementById("pix-text")
         var pixicon = document.getElementById("pix-icon")
+        var havanicon = document.getElementById("havan-icon")
 
         console.log(pixtext)
         if(pixtext.style.display === ""){
-            document.getElementById("pix-text").style.display = "block";
+            document.getElementById("pix-text").style.display = "flex";
             pixicon.className = "fa fa-caret-down";
+            document.getElementById("havan-text").style.display = "";
+            havanicon.className = "fa fa-caret-right";
         }else{
             document.getElementById("pix-text").style.display = "";
             pixicon.className = "fa fa-caret-right";
+            document.getElementById("havan-text").style.display = "";
+            havanicon.className = "fa fa-caret-right";
         }
     });
 
     document.getElementById("havan-caret").addEventListener("click", function(){
         var havantext = document.getElementById("havan-text")
         var havanicon = document.getElementById("havan-icon")
+        var pixicon = document.getElementById("pix-icon")
 
         if(havantext.style.display === ""){
             document.getElementById("havan-text").style.display = "block";
             havanicon.className = "fa fa-caret-down";
+            document.getElementById("pix-text").style.display = "";
+            pixicon.className = "fa fa-caret-right";
         }else{
             document.getElementById("havan-text").style.display = "";
             havanicon.className = "fa fa-caret-right";
+            document.getElementById("pix-text").style.display = "";
+            pixicon.className = "fa fa-caret-right";
         }
     });
 
